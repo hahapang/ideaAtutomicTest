@@ -5,6 +5,7 @@ from Action.userLogin import Action
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+import re
 
 class TestAsset(unittest.TestCase):
 
@@ -18,9 +19,10 @@ class TestAsset(unittest.TestCase):
 
         asset_web = create_asset.navigate_by_xpath(xpath = '//*[@id="root"]/div[2]/div/div[2]/label[2]/input', to_web_page=myAssetPage)
 
-        WebDriverWait(self.web_driver, 10).until(EC.title_contains('作品'))
+        WebDriverWait(self.web_driver, 10).until(EC.title_contains(''))
 
         # Obtain Asset id_href
+
         # try:
         #
         #     asset_id_href = asset_web.find_by_xpath('//div[@class="card asset"][1]/a').get_attribute('href')
